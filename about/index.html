@@ -9,21 +9,22 @@
 </head>
 <body>
 
-  <button class="menu-toggle" aria-label="Open menu">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
-
-  <nav class="sidebar" aria-label="Main menu">
-    <button class="close-btn" aria-label="Close menu">&times;</button>
-    <ul>
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="/about" class="active">About</a></li>
-    </ul>
-  </nav>
-
   <div class="container about-container">
+
+    <!-- Hamburger menu -->
+    <div class="hamburger" aria-label="Open menu" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </nav>
+
+    <!-- Main content -->
     <p>
       <strong>Sparktone™ Entertainment</strong> is a dynamic film and television production company dedicated to creating compelling stories across a wide range of genres. Whether it’s drama, fantasy, thriller, or comedy, we bring original ideas to life with creativity and passion that resonate with audiences worldwide.
     </p>
@@ -33,8 +34,9 @@
     <div class="more-link">
       <a href="https://group.sparktone.site" target="_blank" rel="noopener noreferrer">More about Sparktone™ Group</a>
     </div>
-      <br>
+    <br>
 
+    <!-- Footer -->
     <footer>
       <div class="footer-links">
         <a href="/terms-and-conditions">Terms &amp; Conditions</a>
@@ -45,22 +47,24 @@
     </footer>
   </div>
 
+  <!-- Sidebar script -->
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
+    const hamburger = document.querySelector('.hamburger');
     const sidebar = document.querySelector('.sidebar');
-    const closeBtn = document.querySelector('.close-btn');
 
-    menuToggle.addEventListener('click', () => {
-      sidebar.classList.add('open');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      sidebar.classList.remove('open');
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      document.body.classList.toggle('menu-open');
     });
 
     document.addEventListener('click', (e) => {
-      if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+      if (
+        sidebar.classList.contains('open') &&
+        !sidebar.contains(e.target) &&
+        !hamburger.contains(e.target)
+      ) {
         sidebar.classList.remove('open');
+        document.body.classList.remove('menu-open');
       }
     });
   </script>
