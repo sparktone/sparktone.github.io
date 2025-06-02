@@ -18,6 +18,15 @@
 </head>
 <body>
     <div class="container">
+<div class="hamburger" aria-label="Open menu" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<nav class="sidebar">
+    <a href="/about">About</a>
+</nav>
         <img src="Sparktone-Entertainment-logo-white.png" alt="Sparktone Entertainment Logo" class="logo" />
         <h1>Website coming soon</h1>
         <a href="https://linktr.ee/sparktone" target="_blank" class="linktree-icon" aria-label="Sparktone LinkTree">
@@ -25,5 +34,25 @@
         </a>
         <footer>&copy; 2025 Sparktone™ Entertainment. All rights reserved.</footer>
     </div>
+    <script>
+    const hamburger = document.querySelector('.hamburger');
+    const sidebar = document.querySelector('.sidebar');
+
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        document.body.classList.toggle('menu-open');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (
+            sidebar.classList.contains('open') &&
+            !sidebar.contains(e.target) &&
+            !hamburger.contains(e.target)
+        ) {
+            sidebar.classList.remove('open');
+            document.body.classList.remove('menu-open');
+        }
+    });
+    </script>
 </body>
 </html>
