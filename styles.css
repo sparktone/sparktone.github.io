@@ -83,6 +83,9 @@ footer {
     animation: fadeInUp 1s ease forwards;
     animation-delay: 1.1s;
     opacity: 0;
+    text-align: center;
+    position: relative;
+    padding-bottom: 12px; /* space for links above */
 }
 
 /* Hamburger icon */
@@ -156,4 +159,31 @@ body.menu-open::before {
     background: rgba(0,0,0,0.4);
     z-index: 999;
     animation: fadeInUp 0.4s ease forwards;
+}
+
+/* Links container */
+.footer-links {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+/* Links style */
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+    color: #fff;
+    outline: none;
+}
+
+/* Separator style */
+.separator {
+    margin: 0 8px;
+    color: #555;
 }
