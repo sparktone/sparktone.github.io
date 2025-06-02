@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About – Sparktone™ Entertainment</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
+  <button class="menu-toggle" aria-label="Open menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav class="sidebar" aria-label="Main menu">
+    <button class="close-btn" aria-label="Close menu">&times;</button>
+    <ul>
+      <li><a href="/about" class="active">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="container about-container">
+    <p>
+      <strong>Sparktone™ Entertainment</strong> is a dynamic film and television production company dedicated to creating compelling stories across a wide range of genres. Whether it’s drama, fantasy, thriller, or comedy, we bring original ideas to life with creativity and passion that resonate with audiences worldwide.
+    </p>
+    <p>
+      As a proud member of the <strong><a href="https://group.sparktone.site" target="_blank" rel="noopener noreferrer">Sparktone™ Group</a></strong>, <strong>Sparktone™ Entertainment</strong> benefits from the strength and resources of a diverse media family. This partnership enables us to deliver high-quality productions while maintaining the agility and vision of an independent studio.
+    </p>
+    <div class="more-link">
+      <a href="https://group.sparktone.site" target="_blank" rel="noopener noreferrer">More about Sparktone™ Group</a>
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+        <span class="separator">|</span>
+        <a href="https://group.sparktone.site" target="_blank" rel="noopener noreferrer">Sparktone Group</a>
+      </div>
+      &copy; 2025 Sparktone™ Entertainment. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const closeBtn = document.querySelector('.close-btn');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+        sidebar.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
