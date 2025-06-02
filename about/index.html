@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About – Sparktone™ Entertainment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <button class="menu-toggle" aria-label="Open menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav class="sidebar" aria-label="Main menu">
+    <button class="close-btn" aria-label="Close menu">&times;</button>
     <ul>
       <li><a href="/about" class="active">About</a></li>
     </ul>
@@ -13,7 +32,7 @@
     <div class="more-link">
       <a href="https://group.sparktone.site" target="_blank" rel="noopener noreferrer">More about Sparktone™ Group</a>
     </div>
-     <br>
+      <br>
 
     <footer>
       <div class="footer-links">
@@ -33,3 +52,17 @@
     menuToggle.addEventListener('click', () => {
       sidebar.classList.add('open');
     });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+        sidebar.classList.remove('open');
+      }
+    });
+  </script>
+
+</body>
+</html>
