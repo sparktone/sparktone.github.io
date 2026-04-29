@@ -42,9 +42,6 @@
     "https://www.pinterest.com/sparktone"
   ]
 }       
-  document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("year").textContent = new Date().getFullYear();
-  });
     </script>
     <link rel="canonical" href="https://www.sparktone.site/" />
 </head>
@@ -71,5 +68,8 @@
   &copy; <span id="year"></span> Sparktone™ Entertainment. All rights reserved.
 </footer>
     </div>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
